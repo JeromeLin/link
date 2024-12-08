@@ -2,9 +2,12 @@
   "name": "link",
   "version": "0.0.0",
   "scripts": {
-    "build": "node build.js"
+    "build": "node tools.js && node build.js && node ./src/build.js",
+    "tools": "node tools.js"
   },
   "dependencies": {
-    "ejs": "^3.1.8"
+    "ejs": "^3.1.8",
+    "csv": "^6.3.10",
+    "xlsx": "^0.18.5"
   }
 }

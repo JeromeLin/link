@@ -1,204 +1,56 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>导航主页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="导航主页,导航网址大全,网址分类,网址分享" />
+    <meta name="description" content="导航主页" />
     <style>
-      *,
-      ::after,
-      ::before {
-        box-sizing: border-box;
-      }
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
-      body {
-        width: 100%;
-        min-height: 100vh;
-        vertical-align: baseline;
-        word-wrap: break-word;
-        color: #282a2d;
-        background: #f9f9f9;
-      }
-
-      a {
-        color: #282a2d;
-        outline: 0 !important;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: none;
-        color: #e94041;
-      }
-
-      .sticky {
-        position: sticky;
-        top: 0;
-        z-index: 1080;
-      }
-      .overflow-hidden {
-        overflow: hidden;
-      }
-      .mt24 {
-        margin-top: 24px
-      }
-      .border-top {
-        border-top: 1px solid #dee2e6;
-      }
-
-      .sidebar-nav {
-        position: fixed;
-        top: 0;
-        font-size: 14px;
-        width: 200px;
-        height: 100vh;
-        z-index: 1081;
-        background: #f0f2f4;
-        box-shadow: 0 0 32px 0 rgba(0,0,0,0.1);
-      }
-      .sidebar-logo {
-        height: 74px;
-        border-bottom: 1px solid #dee2e6;
-        background: #fff;
-        text-align: center;
-        line-height: 74px;
-        font-size: 22px;
-      }
-      .sidebar-nav ul {
-        margin: 0;
-        padding: 0;
-      }
-      .sidebar-item {
-        position: relative;
-        display: block;
-      }
-      .sidebar-item > a:hover {
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        color: #e94041;
-      }
+      *,::after,::before {box-sizing: border-box;}
+      body,html {margin: 0;padding: 0;border: 0;}
+      body {min-height: 100vh;vertical-align: baseline;word-wrap: break-word;color: #282a2d;background: #f9f9f9;font-size: 14px;}
+      a {color: #282a2d;outline: 0 !important;text-decoration: none;}
+      a:hover {text-decoration: none;color: #e94041;}
+      .size-full {width: 100%;height: 100%;}
+      .sticky {position: sticky;top: 0;z-index: 1080;}
+      .overflow-hidden {overflow: hidden;}
+      .mt24 {margin-top: 24px}
+      .border-top {border-top: 1px solid #dee2e6;}
+      .sidebar-nav {position: fixed;top: 0;font-size: 14px;width: 200px;height: 100vh;z-index: 1081;background: #f0f2f4;box-shadow: 0 0 32px 0 rgba(0,0,0,0.1);}
+      .sidebar-logo {height: 48px;border-bottom: 1px solid #dee2e6;background: #fff;text-align: center;line-height: 48px;font-size: 22px;}
+      .sidebar-nav ul {margin: 0;padding: 0;}
+      .sidebar-item {position: relative;display: block;}
+      .sidebar-item:hover {background: rgba(0, 0, 0, 0.1);color: #e94041;}
+      .sidebar-item a:hover {color: #e94041;}
       .sidebar-nav .flex-bottom a,
-      .sidebar-menu-inner a {
-        display: flex;
-        overflow: hidden;
-        padding: 8px 10px;
-        margin: 1.5px 8px;
-        color: #515c6b;
-        font-size: 16px;
-        align-items: center;
-        white-space: nowrap;
-        transition: all 0.3s;
-      }
-      .sidebar-menu ul:first-child > li > a {
-        padding: 12px 10px;
-      }
-      .sidebar-nav-inner {
-        max-width: 200px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-      .sidebar-nav-inner .flex-fill {
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .header-nav {
-        position: fixed;
-        right: 0;
-        left: 200px;
-        background: rgb(255 255 255 / 77%);
-      }
-
-      .main-content {
-        flex-direction: column;
-        display: flex;
-      }
-
-      .flex-fill {
-        flex: 1 1 auto;
-      }
-
-      .container {
-        margin: auto;
-      }
-      .main-content {
-        margin-left: 200px;
-      }
-
-      @media (min-width: 992px) {
-      }
-
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
-      }
-
-      .customize-width {
-        max-width: 1900px;
-      }
-
-      .flex {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .flex-item {
-        flex: 0 0 20%;
-        border: 1px solid transparent;
-        padding: 0 12px;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        word-wrap: break-word;
-        background-color: #eee;
-        margin-bottom: 12px;
-      }
-      .card-body {
-        position: relative;
-        padding: 12px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      .column {
-        flex: 1 1 100%;
-        padding: 0 12px;
-        margin-top: 24px;
-      }
-      .column .card {
-        border-left: 4px solid #e94041;
-        background: transparent;
-      }
-      .column .card-body {
-        padding: 0 0 0 12px;
-      }
+      .sidebar-menu-inner a {display: flex;overflow: hidden;padding: 4px;margin: 0 4px;color: #515c6b;font-size: 16px;align-items: center;white-space: nowrap;transition: all 0.3s;}
+      .sidebar-nav-inner {max-width: 200px;display: flex;flex-direction: column;height: 100%;}
+      .sidebar-nav-inner .flex-fill {overflow-y: auto;overflow-x: hidden;-webkit-overflow-scrolling: touch;}
+      .header-nav {position: fixed;right: 0;left: 200px;background: rgb(255 255 255 / 77%);}
+      .main-content {flex-direction: column;display: flex;}
+      .flex-fill {flex: 1 1 auto;}
+      .container {margin: auto;}
+      .ml200{ margin-left: 200px; }
+      .ml12{ margin-left: 12px; }
+      .customize-width {min-width: 1140px;max-width: 1900px;}
+      .flex {display: flex;flex-wrap: wrap;}
+      .flex-item {flex: 0 0 20%;border: 1px solid transparent;padding: 0 6px;overflow: hidden;white-space: nowrap;}
+      .card {position: relative;display: flex;flex-direction: column;word-wrap: break-word;background-color: #eee;margin-bottom: 12px;}
+      .card-body {position: relative;padding: 10px;text-overflow: ellipsis;overflow: hidden;}
+      .column {flex: 1 1 100%;padding: 0 12px;margin-top: 24px;}
+      .column .card {border-left: 4px solid #e94041;background: transparent;}
+      .column .card-body {padding: 0 0 0 12px;}
     </style>
   </head>
-  <body>
+  <body class="size-full">
     <div class="sidebar-nav sticky">
-      <div class="sidebar-nav-inner">
-        <div class="sidebar-logo">
-          <div class="logo overflow-hidden">导航主页</div>
-        </div>
+      <div class="sidebar-nav-inner"><div class="sidebar-logo">
+        <div class="logo overflow-hidden">导航主页</div></div>
         <div class="sidebar-menu flex-fill">
           <div class="sidebar-scroll">
             <div class="sidebar-menu-inner">
               <ul>
-                
               </ul>
             </div>
           </div>
@@ -207,7 +59,7 @@
           <div class="flex-bottom">
             <ul>
               <li class="sidebar-item">
-                <a href="#"><span>网站提交</span></a>
+                <a href="https://github.com/stbui/link"><span>网站提交</span></a>
               </li>
             </ul>
           </div>
@@ -215,54 +67,92 @@
       </div>
     </div>
 
-    <div class="main-content flex-fill">
+    <div class="ml200 flex-fill">
       <div class="container customize-width">
         <div class="header-nav"></div>
-        <div class="content">
+        <div class="ml12">
           <div class="flex">
-            
-            <div id="股市财经" class="flex-item"><a class="card" href="./html/broker.html" title="股市财经" target="_blank" ><div class="card-body">股市财经</div></a></div>
-            
-            <div id="基金公司" class="flex-item"><a class="card" href="./html/fund.html" title="基金公司" target="_blank" ><div class="card-body">基金公司</div></a></div>
-            
-            <div id="银行" class="flex-item"><a class="card" href="./html/bank.html" title="银行" target="_blank" ><div class="card-body">银行</div></a></div>
-            
-            <div id="房产" class="flex-item"><a class="card" href="./html/fangchan.html" title="房产" target="_blank" ><div class="card-body">房产</div></a></div>
-            
-            <div id="汽车" class="flex-item"><a class="card" href="./html/fangchan.html" title="汽车" target="_blank" ><div class="card-body">汽车</div></a></div>
-            
-            <div id="电视直播" class="flex-item"><a class="card" href="./html/iptv.html" title="电视直播" target="_blank" ><div class="card-body">电视直播</div></a></div>
-            
-            <div id="政府网站" class="flex-item"><a class="card" href="./html/office.html" title="政府网站" target="_blank" ><div class="card-body">政府网站</div></a></div>
-            
-            <div id="院校导航" class="flex-item"><a class="card" href="./html/school.html" title="院校导航" target="_blank" ><div class="card-body">院校导航</div></a></div>
-            
-            <div id="电商美工" class="flex-item"><a class="card" href="./html/meigong.html" title="电商美工" target="_blank" ><div class="card-body">电商美工</div></a></div>
-            
-            <div id="电商运营" class="flex-item"><a class="card" href="./html/coonav.html" title="电商运营" target="_blank" ><div class="card-body">电商运营</div></a></div>
-            
-            <div id="生活娱乐" class="flex-item"><a class="card" href="./html/shenghuo.html" title="生活娱乐" target="_blank" ><div class="card-body">生活娱乐</div></a></div>
-            
-            <div id="新媒体" class="flex-item"><a class="card" href="./html/xinmeiti.html" title="新媒体" target="_blank" ><div class="card-body">新媒体</div></a></div>
-            
-            <div id="coonav" class="flex-item"><a class="card" href="./html/coonav.html" title="coonav" target="_blank" ><div class="card-body">coonav</div></a></div>
-            
-            <div id="dyqu" class="flex-item"><a class="card" href="./html/dyqu.html" title="dyqu" target="_blank" ><div class="card-body">dyqu</div></a></div>
-            
-            <div id="law" class="flex-item"><a class="card" href="./html/law.html" title="law" target="_blank" ><div class="card-body">law</div></a></div>
-            
-            <div id="science" class="flex-item"><a class="card" href="./html/science.html" title="science" target="_blank" ><div class="card-body">science</div></a></div>
-            
-            <div id="shenghuo" class="flex-item"><a class="card" href="./html/shenghuo.html" title="shenghuo" target="_blank" ><div class="card-body">shenghuo</div></a></div>
-            
-            <div id="study" class="flex-item"><a class="card" href="./html/study.html" title="study" target="_blank" ><div class="card-body">study</div></a></div>
-            
-            <div id="xxx" class="flex-item"><a class="card" href="./html/xxx.html" title="xxx" target="_blank" ><div class="card-body">xxx</div></a></div>
-            
+            <div id="政府网站" class="flex-item"><a class="card" href="./html/office.html" title="政府网站" target="_blank"><div class="card-body">政府网站</div></a></div>
+            <div id="政府站群" class="flex-item"><a class="card" href="./html/gov.html" title="政府站群" target="_blank"><div class="card-body">政府站群</div></a></div>
+            <div id="上海导航" class="flex-item"><a class="card" href="./html/shanghai.html" title="上海导航" target="_blank"><div class="card-body">上海导航</div></a></div>
+            <div id="湖南导航" class="flex-item"><a class="card" href="./html/hunan.html" title="湖南导航" target="_blank"><div class="card-body">湖南导航</div></a></div>
+            <div id="地方志" class="flex-item"><a class="card" href="./html/difangzhi.html" title="地方志" target="_blank"><div class="card-body">地方志</div></a></div>
+            <div id="院校导航" class="flex-item"><a class="card" href="./html/school.html" title="院校导航" target="_blank"><div class="card-body">院校导航</div></a></div>
+            <div id="公司" class="flex-item"><a class="card" href="./html/company.html" title="公司" target="_blank"><div class="card-body">公司</div></a></div>
+            <div id="求职" class="flex-item"><a class="card" href="./html/qzjy.html" title="求职" target="_blank"><div class="card-body">求职</div></a></div>
+            <div id="人工智能" class="flex-item"><a class="card" href="./html/ai.html" title="人工智能" target="_blank"><div class="card-body">人工智能</div></a></div>
+            <div id="股市财经" class="flex-item"><a class="card" href="./html/broker.html" title="股市财经" target="_blank"><div class="card-body">股市财经</div></a></div>
+            <div id="基金公司" class="flex-item"><a class="card" href="./html/fund.html" title="基金公司" target="_blank"><div class="card-body">基金公司</div></a></div>
+            <div id="银行" class="flex-item"><a class="card" href="./html/bank.html" title="银行" target="_blank"><div class="card-body">银行</div></a></div>
+            <div id="上市公司" class="flex-item"><a class="card" href="./html/ssgs.html" title="上市公司" target="_blank"><div class="card-body">上市公司</div></a></div>
+            <div id="保险" class="flex-item"><a class="card" href="./html/baoxian.html" title="保险" target="_blank"><div class="card-body">保险</div></a></div>
+            <div id="房产" class="flex-item"><a class="card" href="./html/fangchan.html" title="房产" target="_blank"><div class="card-body">房产</div></a></div>
+            <div id="汽车" class="flex-item"><a class="card" href="./html/qiche.html" title="汽车" target="_blank"><div class="card-body">汽车</div></a></div>
+            <div id="招聘" class="flex-item"><a class="card" href="./html/zhaopin.html" title="招聘" target="_blank"><div class="card-body">招聘</div></a></div>
+            <div id="电商美工" class="flex-item"><a class="card" href="./html/meigong.html" title="电商美工" target="_blank"><div class="card-body">电商美工</div></a></div>
+            <div id="电商运营" class="flex-item"><a class="card" href="./html/coonav.html" title="电商运营" target="_blank"><div class="card-body">电商运营</div></a></div>
+            <div id="生活娱乐" class="flex-item"><a class="card" href="./html/shenghuo.html" title="生活娱乐" target="_blank"><div class="card-body">生活娱乐</div></a></div>
+            <div id="新媒体" class="flex-item"><a class="card" href="./html/xinmeiti.html" title="新媒体" target="_blank"><div class="card-body">新媒体</div></a></div>
+            <div id="科学学术" class="flex-item"><a class="card" href="./html/science.html" title="科学学术" target="_blank"><div class="card-body">科学学术</div></a></div>
+            <div id="电视直播" class="flex-item"><a class="card" href="./html/iptv.html" title="电视直播" target="_blank"><div class="card-body">电视直播</div></a></div>
+            <div id="生活" class="flex-item"><a class="card" href="./html/shenghuo.html" title="生活" target="_blank"><div class="card-body">生活</div></a></div>
+            <div id="学习" class="flex-item"><a class="card" href="./html/study.html" title="学习" target="_blank"><div class="card-body">学习</div></a></div>
+            <div id="银行" class="flex-item"><a class="card" href="./html/bank.html" title="银行" target="_blank"><div class="card-body">银行</div></a></div>
+            <div id="行业" class="flex-item"><a class="card" href="./html/industry.html" title="行业" target="_blank"><div class="card-body">行业</div></a></div>
+            <div id="品牌官网" class="flex-item"><a class="card" href="./html/pinpaiguanwang.html" title="品牌官网" target="_blank"><div class="card-body">品牌官网</div></a></div>
+            <div id="饰品" class="flex-item"><a class="card" href="./html/shipin.html" title="饰品" target="_blank"><div class="card-body">饰品</div></a></div>
+            <div id="居家" class="flex-item"><a class="card" href="./html/jujia.html" title="居家" target="_blank"><div class="card-body">居家</div></a></div>
+            <div id="媒体" class="flex-item"><a class="card" href="./html/meiti.html" title="媒体" target="_blank"><div class="card-body">媒体</div></a></div>
+            <div id="休闲" class="flex-item"><a class="card" href="./html/xiuxian.html" title="休闲" target="_blank"><div class="card-body">休闲</div></a></div>
+            <div id="办公" class="flex-item"><a class="card" href="./html/bangong.html" title="办公" target="_blank"><div class="card-body">办公</div></a></div>
+            <div id="家电" class="flex-item"><a class="card" href="./html/jaidian.html" title="家电" target="_blank"><div class="card-body">家电</div></a></div>
+            <div id="服饰" class="flex-item"><a class="card" href="./html/fushi.html" title="服饰" target="_blank"><div class="card-body">服饰</div></a></div>
+            <div id="玩具" class="flex-item"><a class="card" href="./html/wanju.html" title="玩具" target="_blank"><div class="card-body">玩具</div></a></div>
+            <div id="数码" class="flex-item"><a class="card" href="./html/shuma.html" title="数码" target="_blank"><div class="card-body">数码</div></a></div>
+            <div id="食品" class="flex-item"><a class="card" href="./html/shiping.html" title="食品" target="_blank"><div class="card-body">食品</div></a></div>
+            <div id="照明" class="flex-item"><a class="card" href="./html/zhaoming.html" title="照明" target="_blank"><div class="card-body">照明</div></a></div>
+            <div id="安防" class="flex-item"><a class="card" href="./html/anfang.html" title="安防" target="_blank"><div class="card-body">安防</div></a></div>
+            <div id="环保" class="flex-item"><a class="card" href="./html/huanbao.html" title="环保" target="_blank"><div class="card-body">环保</div></a></div>
+            <div id="机械" class="flex-item"><a class="card" href="./html/jixie.html" title="机械" target="_blank"><div class="card-body">机械</div></a></div>
+            <div id="五金" class="flex-item"><a class="card" href="./html/wujin.html" title="五金" target="_blank"><div class="card-body">五金</div></a></div>
+            <div id="交通" class="flex-item"><a class="card" href="./html/jiaotong.html" title="交通" target="_blank"><div class="card-body">交通</div></a></div>
+            <div id="汽车" class="flex-item"><a class="card" href="./html/qichebaoyang.html" title="汽车" target="_blank"><div class="card-body">汽车</div></a></div>
+            <div id="印刷" class="flex-item"><a class="card" href="./html/yinshua.html" title="印刷" target="_blank"><div class="card-body">印刷</div></a></div>
+            <div id="包装" class="flex-item"><a class="card" href="./html/baozhuang.html" title="包装" target="_blank"><div class="card-body">包装</div></a></div>
+            <div id="纸业" class="flex-item"><a class="card" href="./html/zhiye.html" title="纸业" target="_blank"><div class="card-body">纸业</div></a></div>
+            <div id="仪器" class="flex-item"><a class="card" href="./html/yiqi.html" title="仪器" target="_blank"><div class="card-body">仪器</div></a></div>
+            <div id="电子" class="flex-item"><a class="card" href="./html/dianzi.html" title="电子" target="_blank"><div class="card-body">电子</div></a></div>
+            <div id="建材" class="flex-item"><a class="card" href="./html/jiancai.html" title="建材" target="_blank"><div class="card-body">建材</div></a></div>
+            <div id="冶金" class="flex-item"><a class="card" href="./html/yanjin.html" title="冶金" target="_blank"><div class="card-body">冶金</div></a></div>
+            <div id="医药" class="flex-item"><a class="card" href="./html/yiyao.html" title="医药" target="_blank"><div class="card-body">医药</div></a></div>
+            <div id="纺织" class="flex-item"><a class="card" href="./html/fangzhi.html" title="纺织" target="_blank"><div class="card-body">纺织</div></a></div>
+            <div id="农业" class="flex-item"><a class="card" href="./html/nongye.html" title="农业" target="_blank"><div class="card-body">农业</div></a></div>
+            <div id="能源" class="flex-item"><a class="card" href="./html/nengyuan.html" title="能源" target="_blank"><div class="card-body">能源</div></a></div>
+            <div id="精化" class="flex-item"><a class="card" href="./html/jignhua.html" title="精化" target="_blank"><div class="card-body">精化</div></a></div>
+            <div id="化工" class="flex-item"><a class="card" href="./html/huagong.html" title="化工" target="_blank"><div class="card-body">化工</div></a></div>
+            <div id="商务" class="flex-item"><a class="card" href="./html/shangwu.html" title="商务" target="_blank"><div class="card-body">商务</div></a></div>
+            <div id="物流" class="flex-item"><a class="card" href="./html/wuliu.html" title="物流" target="_blank"><div class="card-body">物流</div></a></div>
+            <div id="coonav" class="flex-item"><a class="card" href="./html/coonav.html" title="coonav" target="_blank"><div class="card-body">coonav</div></a></div>
+            <div id="dyqu" class="flex-item"><a class="card" href="./html/dyqu.html" title="dyqu" target="_blank"><div class="card-body">dyqu</div></a></div>
+            <div id="law" class="flex-item"><a class="card" href="./html/law.html" title="law" target="_blank"><div class="card-body">law</div></a></div>
+            <div id="ycnav" class="flex-item"><a class="card" href="./html/ycnav.html" title="ycnav" target="_blank"><div class="card-body">ycnav</div></a></div>
+            <div id="xxx" class="flex-item"><a class="card" href="./html/xxx.html" title="xxx" target="_blank"><div class="card-body">xxx</div></a></div>
+            <div id="孕婴童导航" class="flex-item"><a class="card" href="./html/yyt.html" title="孕婴童导航" target="_blank"><div class="card-body">孕婴童导航</div></a></div>
+            <div id="福建" class="flex-item"><a class="card" href="./html/fujian.html" title="福建" target="_blank"><div class="card-body">福建</div></a></div>
+            <div id="协会" class="flex-item"><a class="card" href="./html/xiehui.html" title="协会" target="_blank"><div class="card-body">协会</div></a></div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5E4WWB3HP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R5E4WWB3HP');
+    </script>
   </body>
 </html>
-
